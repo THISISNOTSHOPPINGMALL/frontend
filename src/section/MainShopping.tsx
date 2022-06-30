@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import Carousel from 'react-material-ui-carousel';
 
-import { Container, Card, Typography, Paper, CardMedia } from '@mui/material';
+import { Container, Typography, CardMedia } from '@mui/material';
 import { styled } from '@mui/system';
 
 import { ItemLayout } from '../components/itemLayout';
@@ -43,32 +43,22 @@ export const MainShopping: FC = () => {
 
   const Item = (props: { mainImage: { image: string } }) => {
     return (
-      <Paper>
-        <Card>
-          <CardMedia
-            component="img"
-            height="250"
-            image={props.mainImage.image}
-            alt="Paella dish"
-          />
-        </Card>
-      </Paper>
+      <CardMedia
+        component="img"
+        height="250"
+        image={props.mainImage.image}
+        alt="Paella dish"
+      />
     );
   };
 
   return (
     <Container>
-      <Card
-        sx={{
-          my: 2,
-        }}
-      >
-        <Carousel>
-          {mainBannerImages.map((item, i) => (
-            <Item key={i} mainImage={item} />
-          ))}
-        </Carousel>
-      </Card>
+      <Carousel>
+        {mainBannerImages.map((item, i) => (
+          <Item key={i} mainImage={item} />
+        ))}
+      </Carousel>
       <SectionTitle>이 상품 어때요?</SectionTitle>
       <Carousel>
         <ItemLayout sectionItemImages={sectionItemImages} />
