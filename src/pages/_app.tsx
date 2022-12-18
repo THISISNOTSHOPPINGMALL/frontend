@@ -24,12 +24,12 @@ const MyApp: React.FunctionComponent<MyAppProps> = (props) => {
         <title>SHOPPINGMALL</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      <CssBaseline />
       <div>
         <header>
           <Header />
         </header>
       </div>
-      <CssBaseline />
       <Component {...pageProps} />
     </CacheProvider>
   );
