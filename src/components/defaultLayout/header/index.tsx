@@ -1,4 +1,5 @@
 import * as React from 'react';
+import Link from 'next/link';
 import { Button, Container, Divider, Input, Stack } from '@mui/material';
 import { styled } from '@mui/system';
 import { grey, purple } from '@mui/material/colors';
@@ -11,13 +12,8 @@ const TopHeaderArea = styled(Container)({
   display: 'flex',
   flexDirection: 'column',
   justifyContent: 'space-between',
-  py: 1,
   color: grey[900],
-});
-
-const LoginButton = styled(Button)({
-  color: purple[800],
-  fontSize: '12px',
+  padding: '20px',
 });
 
 const AuthButton = styled(Button)({
@@ -54,6 +50,13 @@ const SearchInput = styled(Input)({
   borderRadius: '20px',
 });
 
+const MainBadge = styled(Container)({
+  display: 'flex',
+  justifyContent: 'center',
+  padding: '25px',
+  cursor: 'pointer',
+});
+
 export const Header = () => {
   return (
     <TopHeaderArea>
@@ -70,24 +73,23 @@ export const Header = () => {
           spacing={2}
           divider={<Divider orientation="vertical" flexItem />}
         >
-          <LoginButton className="header-button-signup">회원가입</LoginButton>
-          <AuthButton className="header-button-login">로그인</AuthButton>
-          <AuthButton className="header-button-cs">고객센터</AuthButton>
+          <Link href="/signup" passHref>
+            <AuthButton className="header-button-login">회원가입</AuthButton>
+          </Link>
+          <Link href="/login" passHref>
+            <AuthButton className="header-button-login">로그인</AuthButton>
+          </Link>
         </Stack>
       </TopButtonArea>
-      <Container
-        sx={{
-          display: 'flex',
-          justifyContent: 'center',
-          padding: 4,
-        }}
-      >
-        <img
-          src="https://cdn-icons-png.flaticon.com/512/5900/5900360.png"
-          alt="shopping mall"
-          width="50px"
-        ></img>
-      </Container>
+      <Link href="/" passHref>
+        <MainBadge>
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/5900/5900360.png"
+            alt="shopping mall"
+            width="50px"
+          ></img>
+        </MainBadge>
+      </Link>
       <MenuButtonArea>
         <MenuButton>전체 카테고리</MenuButton>
         <MenuButton>신상품</MenuButton>

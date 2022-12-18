@@ -6,7 +6,7 @@ const ItemListGrid = styled(Grid)({
   marginTop: '30px',
 });
 
-export const ItemLayout = (props: { sectionItemImages }) => {
+export const ItemLayout = (props: { sectionItemImages: Array<Object> }) => {
   const { sectionItemImages } = props;
   return (
     <div>

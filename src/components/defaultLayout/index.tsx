@@ -5,9 +5,4 @@ type LayoutProps = {
   readonly children: ReactNode;
 };
 
-export const Layout = ({ children }: LayoutProps) => (
-  <>
-    <Header />
-    <main>{children}</main>
-  </>
-);
+export const Layout = ({ children }: LayoutProps) => <main>{children}</main>;

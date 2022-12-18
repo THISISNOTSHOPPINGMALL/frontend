@@ -1,4 +1,3 @@
-import { FC } from 'react';
 import Carousel from 'react-material-ui-carousel';
 
 import { Container, Typography, CardMedia } from '@mui/material';
@@ -13,7 +12,7 @@ const SectionTitle = styled(Typography)({
   fontSize: '25px',
 });
 
-export const MainShopping: FC = () => {
+const Shopping = () => {
   const mainBannerImages = [
     {
       image: 'https://cdn.britannica.com/17/196817-050-6A15DAC3/vegetables.jpg',
@@ -66,3 +65,5 @@ export const MainShopping: FC = () => {
     </Container>
   );
 };
+
+export default Shopping;
